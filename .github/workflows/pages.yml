@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  BASE_HREF: "/Eliq-drinks-app-base-Remy/"
+  BASE_HREF: "/Drinks-App-Demo/"
   DIST_DIR: "dist/Eliq-drinks-app-base-Remy/browser"
 
 jobs:
