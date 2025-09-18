@@ -1,0 +1,21 @@
+{
+  "headerTitle": "Smart Drinks",
+  "headerLogo": "https://png.pngtree.com/png-vector/20240628/ourmid/pngtree-bright-ideas-the-light-bulb-moment-png-image_12906566.png",
+  "primaryColor": "#5d2de6",
+  "font": "Courier New",
+  "lightBackgroundColor": "#e6e6e6",
+  "darkBackgroundColor": "#3b3b3b",
+  "showDarkModeSwitch": true,
+  "darkModeDefault": false,
+  "showGridToggle": false,
+  "defaultGrid": true,
+  "footerText": "Drink smarter",
+  "footerLogo": "https://eliq.com/wp-content/uploads/2022/04/eliq-dark-logo.png",
+  "instructionLanguages": {
+    "en": true,
+    "de": true,
+    "es": true,
+    "fr": true,
+    "it": true
+  }
+}

@@ -1,0 +1,21 @@
+<div class="flex justify-between mx-auto md:w-[75vw] xl:w-[50vw]">
+  <div class="flex flex-col justify-evenly w-full">
+    <span class="font-semibold text-xl md:text-3xl">{{ drink().strDrink }}</span>
+
+    <p-button size="large" label="View Details" icon="pi pi-search"
+              (click)="setCurrentDrink()" (keydown)="setCurrentDrink()" />
+  </div>
+
+  <img alt="Drink Thumbnail"
+       (click)="setCurrentDrink()" (keydown)="setCurrentDrink()"
+       class="rounded-2xl cursor-pointer hidden md:block"
+       [ngSrc]="drink().strDrinkThumb"
+       height="240"
+       width="240"/>
+  <img alt="Drink Thumbnail"
+       (click)="setCurrentDrink()" (keydown)="setCurrentDrink()"
+       class="rounded-2xl cursor-pointer block md:hidden"
+       [ngSrc]="drink().strDrinkThumb"
+       height="192"
+       width="192"/>
+</div>

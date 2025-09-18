@@ -1,0 +1,19 @@
+<footer>
+  <div class="h-[10rem] flex flex-col md:flex-row gap-3 justify-between p-4 items-center">
+    <div class="relative h-40 w-40">
+      @if (footerLogo()) {
+        <img
+          [ngSrc]="footerLogo()"
+          alt="Drink App Logo"
+          class="object-contain"
+          fill
+          priority
+        />
+      }
+    </div>
+
+    <app-config-switch/>
+
+    <h3 class="text-gray-500 font-thin text-2xl md:text-4xl">{{ footerText() }}</h3>
+  </div>
+</footer>

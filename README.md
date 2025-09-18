@@ -1,16 +1,34 @@
-# Eliq-drinks-app
-Your home assignment is to write a simple drinks app. It has two main screens. The first screen should show the list of drinks with the image and name of the drink. You can fetch the data from: https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic
+# Home Assigment Rémy Sabosch - Eliq Drinks App
 
-The second screen is a ‘details’ page explaining the drink recipe. It includes: An image with name, ingredients and list of instructions in different languages which the API supports. You can fetch the data from: https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={The-id-of-drink}
+Simple two‑screen app:
+- Overview: list of drinks drinks with different layouts and pagination 
+- Details: image, type, ingredients, and multi‑language instructions
 
-**Note**: Develop this project in WLA (White-Label App) approach. A WLA drinks app which could be branded and configured by a config .json file. Think of this config .json object as an instruction which tells the app what/where/how to populate the UI elements. Think like you are developing a WL app template.
+## White‑Label Configuration
 
-# Design and Architecture
-Please use Angular as your project framework. Also feel free to use your favorite open source libraries. Be creative with the design, you are free to decide how to create the UI and UX.
+What you can control:
+- Branding: title, logo
+- Colors: primary, background
+- Dark mode: on/off, toggle
+- Drinks list UI: grid or list, toggle
+- Details UI: instruction languages
 
-# Delivery
-In this fork, delete this content from the current README.md and instead document your project and explain how UI elements can be managed/altered through the Json object - this is also a good way to share thoughts on your design decisions and trade-offs you made.
+How it works:
+- The app fetches the selected config JSON and exposes it via a global configuration service.
+- Each screen reads only the flags it needs and renders conditionally.
+- For your convenience, there is a config switcher in the footer, which provides three different example configs.
+- The configuration files are found in the public folder.
 
-Additionally, deploy the final compiled version of the app to github pages and provide the URL to it.
+## General notes
 
-Good luck!
+- The app makes heavy use of the **Angular Signals API**, resulting in clean code and simple reactivity. These features could also have been implemented with an RxJs-based approach.
+- **Zoneless Change Detection** is applied to avoid unnecessary cycles and improve performance.
+- Using `provideAppInitializer()` to load the configuration ensures that the app initializes only once the configuration is available.
+- The UI is built with **PrimeNG**, in particular its DataView component. With its design tokens and theming system, the framework adapts well to white-label requirements.
+- **Strict typing** is enforced throughout the app to improve reliability and the development experience.
+- For the list of ingredients, I used a mapped type with template literal types over a numeric union. This automatically generates the strIngredientX and strMeasureX keys, reduces repetition, and ensures compile-time validation of valid indices.
+- **Tailwind** is being used for easy styling and responsive design.
+
+Notes and Limitations
+-	Some of the features used (zoneless, httpResource) are still experimental and should be carefully evaluated before production use.
+-	Testing is limited due to time and scope constraints; in a production scenario, broader coverage would be required.

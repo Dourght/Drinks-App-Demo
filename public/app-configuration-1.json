@@ -1,0 +1,21 @@
+{
+  "headerTitle": "Eliq Drinks",
+  "headerLogo": "https://eliq.com/wp-content/uploads/2022/04/eliq-monocolor-logo-1.png",
+  "primaryColor": "#37c5c8",
+  "font": "Tahoma, sans-serif",
+  "lightBackgroundColor": "#e8f6f6",
+  "darkBackgroundColor": "#032a2a",
+  "showDarkModeSwitch": true,
+  "darkModeDefault": false,
+  "showGridToggle": true,
+  "defaultGrid": true,
+  "footerText": "Empowering the party with drinks!",
+  "footerLogo": "https://eliq.com/wp-content/uploads/2020/09/eliq-gradient-2018.png",
+  "instructionLanguages": {
+    "en": true,
+    "de": true,
+    "es": true,
+    "fr": false,
+    "it": false
+  }
+}

@@ -1,0 +1,5 @@
+<p-selectButton [options]="modeOptions" [(ngModel)]="this.config.mode">
+  <ng-template #item let-item>
+    <i class="pi " [ngClass]="{ 'pi-sun': item === 'light', 'pi-moon': item === 'dark' }"></i>
+  </ng-template>
+</p-selectButton>

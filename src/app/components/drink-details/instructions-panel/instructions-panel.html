@@ -1,0 +1,38 @@
+<div class="flex flex-col gap-3">
+
+  @if (detailedDrink()?.strInstructions && instructionLanguages?.en) {
+    <div class="flex gap-2 items-baseline">
+      <i class="fi fi-gb w-12 self-baseline"></i>
+      <span class="flex-1 min-w-0 break-words hyphens-auto">{{ detailedDrink()?.strInstructions }}</span>
+    </div>
+  }
+
+  @if (detailedDrink()?.strInstructionsDE && instructionLanguages?.de) {
+    <div class="flex gap-2 items-baseline">
+      <i class="fi fi-de w-12 self-baseline"></i>
+      <span class="flex-1 min-w-0 break-words hyphens-auto">{{ detailedDrink()?.strInstructionsDE }}</span>
+    </div>
+  }
+
+  @if (detailedDrink()?.strInstructionsES && instructionLanguages?.es) {
+    <div class="flex gap-2 items-baseline">
+      <i class="fi fi-es w-12 self-baseline"></i>
+      <span class="flex-1 min-w-0 break-words hyphens-auto">{{ detailedDrink()?.strInstructionsES }}</span>
+    </div>
+  }
+
+  @if (detailedDrink()?.strInstructionsFR && instructionLanguages?.fr) {
+    <div class="flex gap-2 items-baseline">
+      <i class="fi fi-fr w-12 self-baseline"></i>
+      <span class="flex-1 min-w-0 break-words hyphens-auto">{{ detailedDrink()?.strInstructionsFR }}</span>
+    </div>
+  }
+
+  @if (detailedDrink()?.strInstructionsIT && instructionLanguages?.it) {
+    <div class="flex gap-2 items-baseline">
+      <i class="fi fi-it w-12 self-baseline"></i>
+      <span class="flex-1 min-w-0 break-words hyphens-auto">{{ detailedDrink()?.strInstructionsIT }}</span>
+    </div>
+  }
+
+</div>

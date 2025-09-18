@@ -1,0 +1,9 @@
+<p-table [value]="rows()" size="small">
+
+  <ng-template #body let-row>
+    <tr>
+      <td>{{ row.ingredient }}</td>
+      <td>{{ row.measure }}</td>
+    </tr>
+  </ng-template>
+</p-table>

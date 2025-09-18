@@ -1,0 +1,36 @@
+<p-dialog [dt]="designToken()" (onHide)="unselectDrink()" [modal]="true" [draggable]="false" [(visible)]="dialogVisible">
+  <div class="h-[80vh] w-[84vw] md:w-[60vw] overflow-auto">
+    @if (!detailsOfDrink()) {
+      <div class="h-full flex justify-center items-center">
+        <p-progress-spinner />
+      </div>
+    } @else {
+      <h2 class="font-semibold text-center text-3xl md:text-5xl mb-4">{{ drink()?.strDrink }}</h2>
+
+      <div class="flex flex-col md:flex-row gap-5">
+        <div class="flex flex-col gap-5 flex-1">
+          <p-panel header="Category">
+            {{ drink()?.strCategory || '—' }}
+          </p-panel>
+
+          <p-panel header="Recommended glassware">
+            {{ drink()?.strGlass || '—' }}
+          </p-panel>
+
+          <p-panel header="Required ingredients">
+            <app-ingredient-table [detailedDrink]="drink()" />
+          </p-panel>
+        </div>
+
+        <div class="relative w-[25rem] h-[25rem]">
+          <img alt="Drink Thumbnail" class="rounded-md object-contain" [ngSrc]="drink()!.strDrinkThumb" fill/>
+        </div>
+      </div>
+
+      <p-panel class="mt-5" header="Instructions">
+        <app-instructions-panel [detailedDrink]="drink()" />
+      </p-panel>
+
+    }
+  </div>
+</p-dialog>

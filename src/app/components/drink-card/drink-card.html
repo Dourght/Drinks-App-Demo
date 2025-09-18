@@ -1,0 +1,22 @@
+<p-card class="w-[12rem] md:w-[15rem] overflow-hidden hover:border-1 hover:cursor-pointer"
+        (click)="setCurrentDrink()" (keydown)="setCurrentDrink()">
+  <ng-template #header>
+    <img alt="Drink Thumbnail" [ngSrc]="drink().strDrinkThumb" height="240" width="240" class="hidden md:block"/>
+    <img alt="Drink Thumbnail"
+         [ngSrc]="drink().strDrinkThumb"
+         height="192" width="192"
+         class="block md:hidden"/>
+  </ng-template>
+
+  <ng-template #content>
+    <div class="flex justify-center h-[7rem]">
+      <span class="font-semibold text-2xl">{{ drink().strDrink }}</span>
+    </div>
+  </ng-template>
+
+  <ng-template #footer>
+    <p-fluid>
+      <p-button label="View Details" icon="pi pi-search" />
+    </p-fluid>
+  </ng-template>
+</p-card>

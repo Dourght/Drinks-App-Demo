@@ -1,0 +1,38 @@
+<p-data-view [value]="listOfDrinks()"
+             [layout]="dataLayout()"
+             [paginator]="true"
+             class="block min-h-screen"
+             [dt]="designToken()"
+             [loading]="!hasFetchedDrinks()"
+             [rows]="12" [rowsPerPageOptions]="[12,24]">
+  <ng-template #header>
+    <app-header [(dataLayout)]="dataLayout" />
+  </ng-template>
+
+  <ng-template #grid let-items>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[repeat(4,max-content)] gap-5 justify-center mx-auto p-3 md:p-5">
+      @for (drink of items; track drink.idDrink) {
+        <app-drink-card [drink]="drink"/>
+      }
+    </div>
+  </ng-template>
+
+  <ng-template #list let-items>
+    <div class="grid grid-cols-1 justify-center w-full sm:w-5/6 lg:w-4/6 mx-auto p-5">
+      @for (drink of items; track drink.idDrink; let isLast = $last) {
+        <app-drink-list-entry [drink]="drink"/>
+        @if (!isLast) {
+          <p-divider class=""/>
+        }
+      }
+    </div>
+  </ng-template>
+
+  <ng-template #emptymessage>
+    <div class="flex justify-center">
+      <span class="text-2xl">Sorry, no drinks found!</span>
+    </div>
+  </ng-template>
+</p-data-view>
+
+<app-drink-details/>

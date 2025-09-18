@@ -1,0 +1,34 @@
+<div class="flex flex-col md:flex-row justify-between items-center">
+  <div class="flex">
+    <div class="relative w-24 h-12">
+      @if (headerLogo()) {
+        <img
+          [ngSrc]="headerLogo()"
+          alt="Drink App Logo"
+          class="object-contain"
+          fill
+          priority
+        />
+      }
+    </div>
+  </div>
+  <h1 class="text-5xl leading-[1.5]">{{ headerTitle() }}</h1>
+
+  <div class="flex gap-2">
+    @if (showGridListSwitch()) {
+      <p-selectButton [(ngModel)]="dataLayout" [options]="dataLayoutOptions" [allowEmpty]="false">
+        <ng-template #item let-item>
+          <i class="pi " [ngClass]="{ 'pi-bars': item === 'list', 'pi-table': item === 'grid' }"></i>
+        </ng-template>
+      </p-selectButton>
+    }
+
+    @if (showGridListSwitch() && showDarkModeSwitch()) {
+      <p-divider [layout]="'vertical'" />
+    }
+
+    @if (showDarkModeSwitch()) {
+      <app-darkmode-switch/>
+    }
+  </div>
+</div>

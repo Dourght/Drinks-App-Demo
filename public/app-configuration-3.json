@@ -1,0 +1,21 @@
+{
+  "headerTitle": "Red Drinks",
+  "headerLogo": "https://botanical-drinks.de/wp-content/uploads/7-scaled.png",
+  "primaryColor": "#e10018",
+  "font": "Brush Script MT",
+  "lightBackgroundColor": "#FFFFFF",
+  "darkBackgroundColor": "#161414",
+  "showDarkModeSwitch": false,
+  "darkModeDefault": true,
+  "showGridToggle": false,
+  "defaultGrid": false,
+  "footerText": "Drinks since 2025",
+  "footerLogo": "https://www.gustagarden.com/cdn/shop/files/Gusta-Garden_Habanero-red.png?v=1705656484&width=1300",
+  "instructionLanguages": {
+    "en": true,
+    "de": true,
+    "es": false,
+    "fr": false,
+    "it": false
+  }
+}
